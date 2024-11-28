@@ -23,11 +23,10 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-  overflow: hidden;
   justify-content: space-between; /* Memberikan jarak antara elemen teks dan audio */
+  padding: 2em;
+  overflow-y: auto; /* Menambahkan kemampuan scroll vertikal jika konten melebihi tinggi */
+  overflow-x: hidden; /* Menyembunyikan scrollbar horizontal jika ada */
 }
 
 @media only screen and (min-width: 1000px) {
@@ -61,8 +60,8 @@ img.birthday {
   padding: 1.5em;
   color: #333;
   font-size: 1.2em;
-  overflow-y: auto; /* Menambahkan kemampuan untuk scroll secara vertikal */
   max-height: 60vh; /* Membatasi tinggi elemen teks agar scroll bisa muncul */
+  overflow-y: auto; /* Menambahkan kemampuan scroll vertikal jika teks lebih panjang */
   scrollbar-width: thin; /* Menambahkan scrollbar yang tipis */
   scrollbar-color: #6c63ff #fdfdfd; /* Mengubah warna scrollbar */
 }
@@ -93,5 +92,7 @@ body.play-music {
   margin-top: 20px; /* Jarak antara audio dan elemen di atasnya */
   width: 100%; /* Menyesuaikan lebar audio dengan kartu */
   max-width: 500px; /* Atur lebar maksimum */
+  height: 50px; /* Tinggi elemen audio ditambah */
+  border-radius: 5px; /* Tambahkan sedikit sudut melengkung */
 }
 
