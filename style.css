@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  background: #6c63ff;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+}
+
+.card {
+  background: #fdfdfd;
+  border-radius: 10px;
+  height: 85vh;
+  width: 80vw;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  overflow: hidden;
+  justify-content: space-between; /* Memberikan jarak antara elemen teks dan audio */
+}
+
+@media only screen and (min-width: 1000px) {
+  .card {
+    flex-direction: row-reverse;
+  }
+  .card img.birthday {
+    width: 100%;
+    max-width: 50vw;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .card {
+    flex-direction: column;
+  }
+  .card img.birthday {
+    width: 100%;
+    max-width: 50vw;
+    height: unset;
+  }
+}
+
+img.birthday {
+  max-height: 80vh;
+
+}
+
+.text {
+  padding: 1.5em;
+  color: #333;
+  font-size: 1.2em;
+  overflow-y: auto; /* Menambahkan kemampuan untuk scroll secara vertikal */
+  max-height: 60vh; /* Membatasi tinggi elemen teks agar scroll bisa muncul */
+  scrollbar-width: thin; /* Menambahkan scrollbar yang tipis */
+  scrollbar-color: #6c63ff #fdfdfd; /* Mengubah warna scrollbar */
+}
+
+.muted {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.space {
+  height: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body.play-music {
+  animation: fadeIn 2s ease-out;
+}
+
+.audio {
+  margin-top: 20px; /* Jarak antara audio dan elemen di atasnya */
+  width: 100%; /* Menyesuaikan lebar audio dengan kartu */
+  max-width: 500px; /* Atur lebar maksimum */
+}
+
